@@ -1,4 +1,4 @@
-(ns postcss.parser
+(ns postcss.impl.parser
   (:require [clojure.core.protocols :as p])
   (:import [com.steadystate.css.dom CSSMediaRuleImpl CSSStyleDeclarationImpl CSSStyleRuleImpl Property]
            [com.steadystate.css.parser CSSOMParser SACParserCSS3]

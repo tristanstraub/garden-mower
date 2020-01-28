@@ -1,8 +1,8 @@
-(ns postcss.emitter
+(ns postcss.impl.emitter
   (:require [garden.stylesheet]
             [garden.core]
             [clojure.string :as str]
-            [postcss.parser :as parser]))
+            [postcss.impl.parser :as parser]))
 
 (defmulti emit :type)
 
@@ -49,12 +49,6 @@
                                    (mapcat :style (selector-rules style-data selector)))
                                  selectors))})
        mixins))
-
-(defn style-data-css
-  ([style-data]
-   (style-data-css style-data nil))
-  ([style-data mixins]
-   (mapv emit (mixins-data style-data mixins))))
 
 (defn merge-selectors*
   [parsed-css mixins]

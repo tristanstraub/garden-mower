@@ -1,5 +1,5 @@
 (ns postcss.emitter-test
-  (:require [postcss.emitter :as emitter]
+  (:require [postcss.impl.emitter :as emitter]
             [clojure.test :refer [deftest is]]))
 
 (deftest merge-selectors
