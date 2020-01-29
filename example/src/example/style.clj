@@ -7,8 +7,8 @@
 
 (comment
   (defn kw
-    "Transform space separated classes into vector of keywords for use with `alias-selectors`.
-     Use with cider-eval-last-sexp-and-replace to convert class string"
+    "Transform space separated html class into a vector of keywords. Used for converting html
+     examples to clojure."
     [classes-string]
     (mapv #(keyword (str "." (name %))) (str/split classes-string #" ")))
   )
