@@ -1,6 +1,6 @@
 (ns postcss.core
   (:require [postcss.impl.emitter]))
 
-(defn merge-selectors
+(defn alias-selectors
   [css mixins]
-  (postcss.impl.emitter/merge-selectors css mixins))
+  (postcss.impl.emitter/alias-selectors css mixins))

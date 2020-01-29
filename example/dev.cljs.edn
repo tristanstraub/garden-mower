@@ -1,0 +1,3 @@
+{:main       example.client
+ :output-dir "target/public/cljs-out/dev"
+ :output-to  "target/public/cljs-out/dev-main.js"}

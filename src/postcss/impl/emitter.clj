@@ -6,14 +6,18 @@
 
 (defmulti emit :type)
 
-(defn selector-rules
-  [css selector]
-  (->> css
-       (mapcat (fn [{:keys [type] :as rule}]
-                 (if (= type :media-rule)
-                   (:rules rule)
-                   [rule])))
-       (filter (comp #{(name selector)} name :selector))))
+(defn alias-selector
+  [alias selector node]
+  (if (map? node)
+    (case (:type node)
+      :style-rule (when (= (name selector)
+                           (name (:selector node)))
+                    (assoc node :selector alias))
+      :media-rule (let [media-rule (update node :rules #(alias-selector alias selector %))]
+                    (when (seq (:rules media-rule))
+                      media-rule))
+      (throw (ex-info "Unrecognized node type" {:node node})))
+    (filter identity (map #(alias-selector alias selector %) node))))
 
 (defmethod emit :style-rule
   [{:keys [selector style]}]
@@ -40,22 +44,21 @@
   (garden.stylesheet/at-media (apply merge (map emit media))
                               (mapv emit rules)))
 
-(defn mixins-data
+(defn aliased-rules
   [style-data mixins]
-  (map (fn [[name selectors]]
-         {:type     :style-rule
-          :selector name
-          :style    (vec (mapcat (fn [selector]
-                                   (mapcat :style (selector-rules style-data selector)))
-                                 selectors))})
-       mixins))
+  (->> (for [[alias selectors] mixins
+             selector         selectors]
+         (alias-selector alias selector style-data))
+       (apply concat)))
 
-(defn merge-selectors*
+(defn alias-selectors*
   [parsed-css mixins]
-  (->> (partition 2 mixins)
-       (mixins-data parsed-css)
+  (->> (cond->> mixins
+         (vector? mixins)
+         (partition 2))
+       (aliased-rules parsed-css)
        (mapv emit)))
 
-(defn merge-selectors
+(defn alias-selectors
   [css mixins]
-  (garden.core/css (merge-selectors* (parser/parse-css css) mixins)))
+  (garden.core/css (alias-selectors* (parser/parse-css css) mixins)))

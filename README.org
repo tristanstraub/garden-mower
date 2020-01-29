@@ -1,0 +1,29 @@
+
+* clj-postcss
+
+*clj-postcss* is a simple css post processor to merge selector attributes into custom selectors.
+
+* Example
+
+The following:
+
+#+BEGIN_SRC clojure
+  (let [css ".blue { color: rgba(0,0,255,1); } .bg-red { background-color: rgba(255,0,0,1);"]
+    (postcss.core/alias-selectors css [:.btn-blue [:.blue :.bg-red] :.btn-red [:.bg-red]]))))
+#+END_SRC
+
+Produces:
+
+#+BEGIN_SRC css
+  .btn-blue {
+    color: rgba(0, 0, 255, 1);
+  }
+
+  .btn-blue {
+    background-color: rgba(255, 0, 0, 1);
+  }
+
+  .btn-red {
+    background-color: rgba(255, 0, 0, 1);
+  }
+#+END_SRC
