@@ -2,6 +2,10 @@
 
 This example demonstrates the use of tailwindcss, as described in the following documentation: https://tailwindcss.com/components/cards.
 
+* Screenshot
+
+[[resources/public/tailwind-example.png]]
+
 * Running
 
 #+BEGIN_SRC sh
