@@ -108,6 +108,10 @@ which produces:
 }
 #+END_SRC
 
+* Caveats
+
+The CSS output is not optimised and sometimes has too much whitespace. This has room for improvement.
+
 * License
 
 https://opensource.org/licenses/MIT
