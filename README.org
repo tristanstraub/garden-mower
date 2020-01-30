@@ -1,15 +1,19 @@
 * project: garden-mower
 
-*garden-mower* is a simple css preprocessor that merges specific selector attributes from a css document, and outputs data that can be digested by https://github.com/noprompt/garden.
+*garden-mower* is a simple css preprocessor that merges specific selector attributes from a css document, and outputs data that can be digested by [[https://github.com/noprompt/garden]].
 
 * motivation
 
 I want to use tailwindcss, but I want to keep my tooling within clojure. I need to be able to
 create custom class selectors which combine the attributes of specified tailwindcss classes.
 
+* examples
+
+- tailwindcss [[examples/tailwind]]
+
 * usage
 
-`garden-mower.core/attributes` walks a css document and extracts the attributes that match the selector(s), and converts them into a form that can be digested by https://github.com/noprompt/garden.
+`garden-mower.core/attributes` walks a css document and extracts the attributes that match the selector(s), and converts them into a form that can be digested by [[https://github.com/noprompt/garden]].
 
 Currently, the fetched selectors must be simple single elements, but the result of `garden-mower.core/attributes` can be embedded anywhere.
 
