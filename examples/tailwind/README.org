@@ -2,15 +2,15 @@
 
 This example demonstrates the use of tailwindcss, as described in the following documentation: https://tailwindcss.com/components/cards.
 
-* Screenshot
-
-[[resources/public/tailwind-example.png]]
-
 * Running
 
 #+BEGIN_SRC sh
 clj -Sdeps "{:deps {com.bhauman/figwheel-main {:mvn/version \"0.2.3\"}}}}" -m figwheel.main -b dev -r
 #+END_SRC
+
+* Screenshot
+
+[[resources/public/tailwind-example.png]]
 
 * Acknowledgements
 
