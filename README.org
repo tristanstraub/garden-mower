@@ -108,7 +108,7 @@ which produces:
 }
 #+END_SRC
 
-* Caveats
+* Caveat
 
 The CSS output is not optimised and sometimes has too much whitespace. This has room for improvement.
 
