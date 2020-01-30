@@ -128,7 +128,7 @@ and remove:
 
 - tailwind.min.css
 
-Skip *tailwind-utilities.css*, since we will use our customized styles via *garden-mower*.
+Use *tailwind-utilities.css* with *garden-mower* to generate your CSS, but don't include it in index.html.
 
 * License
 
