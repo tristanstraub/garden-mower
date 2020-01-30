@@ -49,6 +49,6 @@ Produces:
 }
 #+END_SRC
 
-* license
+* License
 
 https://opensource.org/licenses/MIT
