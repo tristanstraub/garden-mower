@@ -7,11 +7,11 @@
 I want to use tailwindcss, but I want to keep my tooling within clojure. I need to be able to
 create custom class selectors which combine the attributes of specified tailwindcss classes.
 
-I want to convert the following, where the keyword arguments passed to *mower/attributes* designate tailwindcss css classes:
+I want to convert the following, where the keyword arguments passed to *garden-mower.core/attributes* designate tailwindcss css classes:
 
 #+BEGIN_SRC clojure
-[[:.card-container (mower/attributes css :.flex :.mx-auto :.flex-col :.sm:flex-row)]
- [:.card-outer (mower/attributes css :.max-w-sm :.w-full :.sm:max-w-full :.lg:flex :.mb-1 :.mx-auto :.sm:mx-1)]]
+[[:.card-container (garden-mower.core/attributes css :.flex :.mx-auto :.flex-col :.sm:flex-row)]
+ [:.card-outer (garden-mower.core/attributes css :.max-w-sm :.w-full :.sm:max-w-full :.lg:flex :.mb-1 :.mx-auto :.sm:mx-1)]]
 #+END_SRC
 
 into the equivalent of the following:
@@ -79,8 +79,8 @@ Because *garden* supports nested media queries (great!), media queries of the se
       .blue   { color: rgba(0,0,255,1); }
     }
     .bg-red { background-color: rgba(255,0,0,1); }"]
-    (garden.core/css [[:.btn (mower/attributes css :.blue :.bg-red)]
-                      [:.btn-red (mower/attributes css :.bg-red)]]))
+    (garden.core/css [[:.btn (garden-mower.core/attributes css :.blue :.bg-red)]
+                      [:.btn-red (garden-mower.core/attributes css :.bg-red)]]))
 #+END_SRC
 
 Produces:
