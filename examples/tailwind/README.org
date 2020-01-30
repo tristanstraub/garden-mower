@@ -1,6 +1,6 @@
 * Description
 
-This example demonstrates how `garden-mower` can ingest tailwindcss, and output custom selectors.
+This example demonstrates how *garden-mower* can ingest tailwindcss, and output custom selectors.
 The example copies from the example at: [[https://tailwindcss.com/components/cards]].
 
 * Running
