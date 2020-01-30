@@ -7,6 +7,60 @@
 I want to use tailwindcss, but I want to keep my tooling within clojure. I need to be able to
 create custom class selectors which combine the attributes of specified tailwindcss classes.
 
+I want to convert the following, where the keyword arguments passed to *mower/attributes* designate tailwindcss css classes:
+
+#+BEGIN_SRC clojure
+[[:.card-container (mower/attributes css :.flex :.mx-auto :.flex-col :.sm:flex-row)]
+ [:.card-outer (mower/attributes css :.max-w-sm :.w-full :.sm:max-w-full :.lg:flex :.mb-1 :.mx-auto :.sm:mx-1)]]
+#+END_SRC
+
+into the equivalent of the following:
+
+#+BEGIN_SRC css
+.card-container {
+  display: flex;
+  margin-left: auto;
+  margin-right: auto;
+  flex-direction: column;
+}
+
+@media (min-width: 640px) {
+  .card-container {
+    flex-direction: row;
+  }
+}
+
+.card-outer {
+  max-width: 24rem;
+  width: 100%;
+}
+
+@media (min-width: 640px) {
+  .card-outer {
+    max-width: 100%;
+  }
+}
+
+@media (min-width: 1024px) {
+  .card-outer {
+    display: flex;
+  }
+}
+
+.card-outer {
+  margin-bottom: 0.25rem;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+@media (min-width: 640px) {
+  .card-outer {
+    margin-left: 0.25rem;
+    margin-right: 0.25rem;
+  }
+}
+#+END_SRC
+
 * Examples
 
 - tailwindcss [[examples/tailwind]]
