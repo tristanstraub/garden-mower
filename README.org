@@ -4,10 +4,10 @@
 
 * Motivation
 
-I want to use tailwindcss, but I want to keep my tooling within clojure. I need to be able to
-create custom class selectors which combine the attributes of specified tailwindcss classes.
+I want to use *tailwindcss*, but I want to keep my tooling within clojure. I need to be able to
+create custom class selectors which combine the attributes of specified *tailwindcss* classes.
 
-I want to convert the following, where the keyword arguments passed to *garden-mower.core/attributes* designate tailwindcss css classes:
+I want to convert the following, where the keyword arguments passed to *garden-mower.core/attributes* designate *tailwindcss* css classes:
 
 #+BEGIN_SRC clojure
 [[:.card-container (garden-mower.core/attributes css :.flex :.mx-auto :.flex-col :.sm:flex-row)]
@@ -63,7 +63,7 @@ into the equivalent of the following:
 
 * Examples
 
-- tailwindcss [[examples/tailwind]]
+- *tailwindcss* [[examples/tailwind]]
 
 * Usage
 
