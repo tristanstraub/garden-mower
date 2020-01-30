@@ -93,11 +93,9 @@ which produces:
 
 #+BEGIN_SRC css
 @media (min-width: 640px) {
-
   .btn {
     color: rgba(0, 0, 255, 1);
   }
-
 }
 
 .btn {
