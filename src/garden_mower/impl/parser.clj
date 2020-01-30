@@ -1,8 +1,8 @@
 (ns garden-mower.impl.parser
   (:require [clojure.core.protocols :as p])
-  (:import [com.steadystate.css.dom CSSMediaRuleImpl CSSStyleDeclarationImpl CSSStyleRuleImpl Property]
+  (:import [com.steadystate.css.dom CSSValueImpl MediaListImpl CSSMediaRuleImpl CSSStyleDeclarationImpl CSSStyleRuleImpl Property]
            [com.steadystate.css.parser CSSOMParser SACParserCSS3]
-           com.steadystate.css.parser.media.MediaQuery
+           [com.steadystate.css.parser.media MediaQuery]
            org.w3c.css.sac.InputSource))
 
 (defn item-seq
@@ -38,7 +38,7 @@
                              priority))})
             properties))))
 
-(extend-type com.steadystate.css.dom.MediaListImpl
+(extend-type MediaListImpl
   p/Datafiable
   (datafy [media-list]
     (map p/datafy (item-seq #(.mediaQuery %1 %2) media-list))))
@@ -60,7 +60,7 @@
      :value      (p/datafy (.getValue property))
      :important? (.isImportant property)}))
 
-(extend-type com.steadystate.css.dom.CSSValueImpl
+(extend-type CSSValueImpl
   p/Datafiable
   (datafy [value]
     (.getCssText value)))
