@@ -12,7 +12,7 @@ I want to convert the following, where the keyword arguments passed to *garden-m
  [:.card-outer (garden-mower.core/attributes css :.max-w-sm :.w-full :.sm:max-w-full :.lg:flex :.mb-1 :.mx-auto :.sm:mx-1)]]
 #+END_SRC
 
-into the equivalent of the following:
+into roughly the following:
 
 #+BEGIN_SRC css
 .card-container {
