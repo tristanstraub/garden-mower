@@ -15,7 +15,7 @@
    [:div.card-inner-image {:style {:background-image (cl-format nil "url('~a')" image)}
                            :title image-title}]
    [:div.card-inner-body
-    [:div.mb-8
+    [:div.card-body-outer
      [:p.card-body-top lock-icon category]
      [:div.card-title title]
      [:p.card-body-text body]]

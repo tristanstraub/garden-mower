@@ -27,7 +27,8 @@
     [:.card-title (attributes :.text-gray-900 :.font-bold :.text-xl :.mb-2)]
     [:body (attributes :.bg-gray-600)]
     [:.card-body-top (attributes :.text-sm :.text-gray-600 :.flex :.items-center)]
-    [:.icon (attributes :.fill-current :.text-gray-500 :.w-3 :.h-3 :.mr-2)]]))
+    [:.icon (attributes :.fill-current :.text-gray-500 :.w-3 :.h-3 :.mr-2)]
+    [:.card-body-outer (attributes :.mb-8)]]))
 
 (comment
   (defn kw
