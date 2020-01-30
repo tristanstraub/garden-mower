@@ -1,5 +1,9 @@
 *Garden-mower* is a simple clojure based CSS preprocessor that emulates @apply from PostCSS, as used by [[https://tailwindcss.com/][tailwindcss]]. It merges specific selector attributes from a css document, and outputs data that can be digested by [[https://github.com/noprompt/garden]].
 
+* Examples
+
+- *tailwindcss* [[examples/tailwind]]
+
 * Motivation
 
 I want to use *tailwindcss*, but I want to keep my tooling within clojure. I need to be able to
@@ -58,10 +62,6 @@ into roughly the following:
   }
 }
 #+END_SRC
-
-* Examples
-
-- *tailwindcss* [[examples/tailwind]]
 
 * Usage
 
