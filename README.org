@@ -64,7 +64,7 @@ to produce roughly the following CSS:
 }
 #+END_SRC
 
-* Usage
+* Dependency
 
 Add *garden-mower* to your dependencies. With tools.deps:
 
@@ -72,6 +72,8 @@ Add *garden-mower* to your dependencies. With tools.deps:
   {:deps {com.tristanstraub/garden-mower {:git "https://github.com/tristanstraub/garden-mower"
                                           :sha "c8af31358ae1da496c18d3c9d2a35d049611d5f8"}}}
 #+END_SRC
+
+* Usage
 
 *garden-mower.core/attributes* walks a css document and extracts the attributes that match the selector(s), and converts them into a form that can be digested by [[https://github.com/noprompt/garden]].
 
