@@ -69,7 +69,7 @@ to produce roughly the following CSS:
 Add *garden-mower* to your dependencies. With tools.deps:
 
 #+BEGIN_SRC clojure
-  {:deps {com.tristanstraub/garden-mower {:git "https://github.com/tristanstraub/garden-mower"
+  {:deps {com.tristanstraub/garden-mower {:git/url "https://github.com/tristanstraub/garden-mower"
                                           :sha "c8af31358ae1da496c18d3c9d2a35d049611d5f8"}}}
 #+END_SRC
 
