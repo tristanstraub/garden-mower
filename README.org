@@ -83,7 +83,7 @@ Because *garden* supports nested media queries (great!), media queries of the se
                       [:.btn-red (garden-mower.core/attributes css :.bg-red)]]))
 #+END_SRC
 
-Produces:
+which produces:
 
 #+BEGIN_SRC css
 @media (min-width: 640px) {
