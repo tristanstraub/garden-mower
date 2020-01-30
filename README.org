@@ -1,4 +1,4 @@
-*Garden-mower* is a simple clojure based CSS preprocessor that emulates @apply from PostCSS, as used by *tailwindcss*. It merges specific selector attributes from a css document, and outputs data that can be digested by [[https://github.com/noprompt/garden]].
+*Garden-mower* is a simple clojure based CSS preprocessor that emulates @apply from PostCSS, as used by [[https://tailwindcss.com/][*tailwindcss*]]. It merges specific selector attributes from a css document, and outputs data that can be digested by [[https://github.com/noprompt/garden]].
 
 * Motivation
 
