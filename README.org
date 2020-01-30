@@ -79,13 +79,14 @@ Currently, the fetched selectors must be simple single elements, but the result 
 Because *garden* supports nested media queries (so good!), media queries of the selectors are preserved. The following example demonstrates this:
 
 #+BEGIN_SRC clojure
-  (let [css "
+  (def css "
     @media (min-width: 640px) {
       .blue   { color: rgba(0,0,255,1); }
     }
-    .bg-red { background-color: rgba(255,0,0,1); }"]
-    (garden.core/css [[:.btn (garden-mower.core/attributes css :.blue :.bg-red)]
-                      [:.btn-red (garden-mower.core/attributes css :.bg-red)]]))
+    .bg-red { background-color: rgba(255,0,0,1); }")
+
+  (garden.core/css [[:.btn (garden-mower.core/attributes css :.blue :.bg-red)]
+                    [:.btn-red (garden-mower.core/attributes css :.bg-red)]])
 #+END_SRC
 
 which produces:
