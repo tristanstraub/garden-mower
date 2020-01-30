@@ -1,5 +1,5 @@
 (ns tailwind.client
-  (:require-macros [example.style :as style])
+  (:require-macros [tailwind.style :as style])
   (:require [goog.dom :as dom]
             [rum.core :as rum]
             [cljs.pprint :refer [cl-format]]))
