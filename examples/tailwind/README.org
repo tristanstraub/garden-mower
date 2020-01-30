@@ -1,0 +1,14 @@
+* Description
+
+This example demonstrates the use of tailwindcss, as described in the following documentation: https://tailwindcss.com/components/cards.
+
+* Running
+
+#+BEGIN_SRC sh
+clj -Sdeps "{:deps {com.bhauman/figwheel-main {:mvn/version \"0.2.3\"}}}}" -m figwheel.main -b dev -r
+#+END_SRC
+
+* Acknowledgements
+
+Card image from: @cathsmithphoto https://unsplash.com/photos/6C2lCVOOvuk
+Avatar image from: https://upload.wikimedia.org/wikipedia/commons/4/41/Precursor_to_official_J.R._%22Bob%22_Dobbs_image.jpg

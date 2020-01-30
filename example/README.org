@@ -1,5 +1,0 @@
-Demonstrates the use of tailwind from the following documentation https://tailwindcss.com/components/cards
-
-* Acknowledgements
-
-Image from: @cathsmithphoto https://unsplash.com/photos/6C2lCVOOvuk

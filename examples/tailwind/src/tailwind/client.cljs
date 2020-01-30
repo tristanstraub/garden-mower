@@ -1,4 +1,4 @@
-(ns example.client
+(ns tailwind.client
   (:require-macros [example.style :as style])
   (:require [goog.dom :as dom]
             [rum.core :as rum]
@@ -31,7 +31,7 @@
    :image-title "Espresso cup and coffee beans on a napkin, on a table"
    :title       "Coffee or tea? Spaces or tabs? Emacs or vi?"
    :body        "Why choose just one..."
-   :avatar      "https://upload.wikimedia.org/wikipedia/commons/4/41/Precursor_to_official_J.R._%22Bob%22_Dobbs_image.jpg"
+   :avatar      "dobbs.jpg"
    :author      "Random coder"
    :date        "Jan 28, 2020"})
 

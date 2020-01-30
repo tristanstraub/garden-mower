@@ -1,4 +1,4 @@
-(ns postcss.impl.parser
+(ns garden-mower.impl.parser
   (:require [clojure.core.protocols :as p])
   (:import [com.steadystate.css.dom CSSMediaRuleImpl CSSStyleDeclarationImpl CSSStyleRuleImpl Property]
            [com.steadystate.css.parser CSSOMParser SACParserCSS3]
@@ -65,12 +65,14 @@
   (datafy [value]
     (.getCssText value)))
 
-(defn parse-css
+(defn parse
   [css]
-  (with-in-str css
-    (let [source (InputSource. *in*)
-          parser (CSSOMParser. (SACParserCSS3.))]
-      (->> (.parseStyleSheet parser source nil nil)
-           (.getCssRules)
-           item-seq
-           (map p/datafy)))))
+  (if (string? css)
+    (with-in-str css
+      (let [source (InputSource. *in*)
+            parser (CSSOMParser. (SACParserCSS3.))]
+        (->> (.parseStyleSheet parser source nil nil)
+             (.getCssRules)
+             item-seq
+             (map p/datafy))))
+    css))

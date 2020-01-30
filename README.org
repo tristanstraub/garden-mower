@@ -1,29 +1,46 @@
+* project: garden-mower
 
-* clj-postcss
+*garden-mower* is a simple css preprocessor that merges specific selector attributes from a css document, and outputs data that can be digested by https://github.com/noprompt/garden.
 
-*clj-postcss* is a simple css post processor to merge selector attributes into custom selectors.
+* motivation
 
-* Example
+I want to use tailwindcss, but I want to keep my tooling within clojure. I need to be able to
+create custom class selectors which combine the attributes of specified tailwindcss classes.
 
-The following:
+* usage
+
+`garden-mower.core/attributes` walks a css document and extracts the attributes that match the selector(s), and converts them into a form that can be digested by https://github.com/noprompt/garden.
+
+Currently, the fetched selectors must be simple single elements, but the result of `garden-mower.core/attributes` can be embedded anywhere.
+
+Because *garden* supports nested media queries (great!), media queries of the selectors are preserved. The following example demonstrates this:
 
 #+BEGIN_SRC clojure
-  (let [css ".blue { color: rgba(0,0,255,1); } .bg-red { background-color: rgba(255,0,0,1);"]
-    (postcss.core/alias-selectors css [:.btn-blue [:.blue :.bg-red] :.btn-red [:.bg-red]]))))
+  (let [css "
+    @media (min-width: 640px) {
+      .blue   { color: rgba(0,0,255,1); }
+    }
+    .bg-red { background-color: rgba(255,0,0,1); }"]
+    (garden.core/css [[:.btn (mower/attributes css :.blue :.bg-red)]
+                      [:.btn-red (mower/attributes css :.bg-red)]]))
 #+END_SRC
 
 Produces:
 
 #+BEGIN_SRC css
-  .btn-blue {
+@media (min-width: 640px) {
+
+  .btn {
     color: rgba(0, 0, 255, 1);
   }
 
-  .btn-blue {
-    background-color: rgba(255, 0, 0, 1);
-  }
+}
 
-  .btn-red {
-    background-color: rgba(255, 0, 0, 1);
-  }
+.btn {
+  background-color: rgba(255, 0, 0, 1);
+}
+
+.btn-red {
+  background-color: rgba(255, 0, 0, 1);
+}
 #+END_SRC
