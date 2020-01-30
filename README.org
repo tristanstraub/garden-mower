@@ -17,7 +17,7 @@ I want to run the following, where the keyword arguments passed to *garden-mower
     [:.card-outer (garden-mower.core/attributes css :.max-w-sm :.w-full :.sm:max-w-full :.lg:flex :.mb-1 :.mx-auto :.sm:mx-1)]])
 #+END_SRC
 
-into roughly the following:
+to produce roughly the following CSS:
 
 #+BEGIN_SRC css
 .card-container {
