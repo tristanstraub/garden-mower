@@ -12,8 +12,9 @@ create custom class selectors which combine the attributes of specified *tailwin
 I want to convert the following, where the keyword arguments passed to *garden-mower.core/attributes* designate *tailwindcss* css classes:
 
 #+BEGIN_SRC clojure
-[[:.card-container (garden-mower.core/attributes css :.flex :.mx-auto :.flex-col :.sm:flex-row)]
- [:.card-outer (garden-mower.core/attributes css :.max-w-sm :.w-full :.sm:max-w-full :.lg:flex :.mb-1 :.mx-auto :.sm:mx-1)]]
+  (garden.core/css
+   [[:.card-container (garden-mower.core/attributes css :.flex :.mx-auto :.flex-col :.sm:flex-row)]
+    [:.card-outer (garden-mower.core/attributes css :.max-w-sm :.w-full :.sm:max-w-full :.lg:flex :.mb-1 :.mx-auto :.sm:mx-1)]])
 #+END_SRC
 
 into roughly the following:
