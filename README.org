@@ -110,7 +110,7 @@ which produces:
 
 * Caveat
 
-The CSS output is not optimised and sometimes has too much whitespace. This has room for improvement.
+The CSS output is not optimised and sometimes has too much whitespace. There is room for improvement.
 
 * License
 
