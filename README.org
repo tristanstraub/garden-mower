@@ -110,14 +110,14 @@ which produces:
 }
 #+END_SRC
 
+* Caveat
+
+The CSS output is not optimised and sometimes has too much whitespace. There is room for improvement.
+
 * What now?
 
 Try [[https://github.com/tristanstraub/docker-tailwindcss]] to generate custom tailwind css files without
 installing yarn/npm locally, and then feed those into *garden-mower*.
-
-* Caveat
-
-The CSS output is not optimised and sometimes has too much whitespace. There is room for improvement.
 
 * License
 
