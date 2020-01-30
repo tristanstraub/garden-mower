@@ -10,5 +10,5 @@ clj -Sdeps "{:deps {com.bhauman/figwheel-main {:mvn/version \"0.2.3\"}}}}" -m fi
 
 * Acknowledgements
 
-Card image from: @cathsmithphoto https://unsplash.com/photos/6C2lCVOOvuk
-Avatar image from: https://upload.wikimedia.org/wikipedia/commons/4/41/Precursor_to_official_J.R._%22Bob%22_Dobbs_image.jpg
+- Card image from: @cathsmithphoto https://unsplash.com/photos/6C2lCVOOvuk
+- Avatar image from: https://upload.wikimedia.org/wikipedia/commons/4/41/Precursor_to_official_J.R._%22Bob%22_Dobbs_image.jpg
