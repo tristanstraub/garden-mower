@@ -116,8 +116,10 @@ The CSS output is not optimised and sometimes has too much whitespace. There is 
 
 * What now?
 
-Try [[https://github.com/tristanstraub/docker-tailwindcss]] to generate custom tailwind css files without
-installing yarn/npm locally, and then feed those into *garden-mower*.
+Try using [[https://github.com/tristanstraub/docker-tailwindcss]] to generate custom *tailwindcss* css files, which
+can be fed into *garden-mower*.
+
+Modify resources/public/index.html to include the newly created *tailwind-base.css* and *tailwind-component.css*, which are relatively small, and remove *tailwind.min.css*. These two css files relatively small, since most of the meat is found in *tailwind-utilities.css*, which we don't have to include if we use *garden-mower* to extract the class attributes we are interested in.
 
 * License
 
