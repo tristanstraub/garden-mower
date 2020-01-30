@@ -65,11 +65,18 @@ into the equivalent of the following:
 
 * Usage
 
+Add *garden-mower* to your dependencies. With tools.deps:
+
+#+BEGIN_SRC clojure
+  {:deps {com.tristanstraub/garden-mower {:git "https://github.com/tristanstraub/garden-mower"
+                                          :sha "c8af31358ae1da496c18d3c9d2a35d049611d5f8"}}}
+#+END_SRC
+
 *garden-mower.core/attributes* walks a css document and extracts the attributes that match the selector(s), and converts them into a form that can be digested by [[https://github.com/noprompt/garden]].
 
 Currently, the fetched selectors must be simple single elements, but the result of *garden-mower.core/attributes* can be embedded anywhere.
 
-Because *garden* supports nested media queries (great!), media queries of the selectors are preserved. The following example demonstrates this:
+Because *garden* supports nested media queries (so good!), media queries of the selectors are preserved. The following example demonstrates this:
 
 #+BEGIN_SRC clojure
   (let [css "
