@@ -48,3 +48,7 @@ Produces:
   background-color: rgba(255, 0, 0, 1);
 }
 #+END_SRC
+
+* license
+
+https://opensource.org/licenses/MIT
