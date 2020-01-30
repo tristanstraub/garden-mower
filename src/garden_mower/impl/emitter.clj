@@ -15,9 +15,11 @@
         (into {}))])
 
 (defmethod emit :media-query
-  [{:keys [not? only? properties]}]
-  {:pre [(not not?) (not only?)]}
-  (->> properties
+  [{:keys [not? only? media properties]}]
+  (->> (concat (when (seq media)
+                 [{:name  media
+                    :value (if only? "only" (not not?))}])
+               properties)
        (map (fn [{:keys [name value important?]}]
               [name (if important?
                       (str value " !important")
