@@ -1,14 +1,14 @@
 (ns tailwind.style
-  (:require [postcss.core]
+  (:require [garden-mower.core]
             [garden.core]
             [clojure.string :as str]))
 
 (defonce tailwind-css
-  (delay (postcss.core/parse (slurp "https://cdn.tailwindcdn.com/1.1.4/tailwind.min.css"))))
+  (delay (garden-mower.core/parse (slurp "https://cdn.tailwindcdn.com/1.1.4/tailwind.min.css"))))
 
 (defn attributes
   [& selectors]
-  (apply postcss.core/attributes @tailwind-css selectors))
+  (apply garden-mower.core/attributes @tailwind-css selectors))
 
 (defmacro css
   []
