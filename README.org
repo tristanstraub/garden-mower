@@ -139,6 +139,14 @@ and remove:
 
 Use *tailwind-utilities.css* with *garden-mower* to generate your CSS, but don't include it in index.html.
 
+* Hacking
+
+The tests can be run with:
+
+#+BEGIN_SRC sh
+clj -A:test
+#+END_SRC
+
 * License
 
 https://opensource.org/licenses/MIT
