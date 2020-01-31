@@ -112,7 +112,7 @@ which produces:
 
 * Selectors that are not valid keywords
 
-Some selectors in tailwind contain backslashes. Since keyword literals in clojure cannot contain backslashes,
+Some selectors in tailwind contain forward slashes. Since keyword literals in clojure cannot contain backslashes,
 use a string instead:
 
 #+BEGIN_SRC clojure
