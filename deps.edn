@@ -3,5 +3,6 @@
            net.sourceforge.cssparser/cssparser {:mvn/version "0.9.27"}
            garden                              {:mvn/version "1.3.9"}}
  :aliases {:test {:extra-paths ["test" "test-resources"]
-                  :extra-deps  {lambdaisland/kaocha {:mvn/version "0.0-581"}}
-                  :main-opts   ["-m" "kaocha.runner"]}}}
+                  :extra-deps {com.cognitect/test-runner {:git/url "https://github.com/cognitect-labs/test-runner.git"
+                                                          :sha     "209b64504cb3bd3b99ecfec7937b358a879f55c1"}}
+                  :main-opts ["-m" "cognitect.test-runner"]}}}
