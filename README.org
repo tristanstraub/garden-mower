@@ -110,6 +110,15 @@ which produces:
 }
 #+END_SRC
 
+* Selectors that are not valid keywords
+
+Some selectors in tailwind contain backslashes. Since keyword literals in clojure cannot contain backslashes,
+use a string instead:
+
+#+BEGIN_SRC clojure
+  (garden.core/css [[:.btn (garden-mower.core/attributes css ".xl:w-1/5")]])
+#+END_SRC
+
 * Caveat
 
 The CSS output is not optimised and sometimes has too much whitespace. There is room for improvement.

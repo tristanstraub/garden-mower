@@ -1,0 +1,5 @@
+@media (min-width: 1280px) {
+  .xl\:w-1\/5 {
+    width: 20%
+  }
+}

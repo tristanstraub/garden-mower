@@ -1,7 +1,8 @@
 (ns garden-mower.core-test
   (:require [garden-mower.core :as mower]
-            [clojure.test :refer [deftest is]]
-            [garden.core]))
+            [clojure.test :refer [deftest is testing]]
+            [garden.core]
+            [clojure.java.io :as io]))
 
 (def css
   ".before { width: \"25%\"}
@@ -25,7 +26,12 @@
          [#garden.types.CSSAtRule{:identifier :media, :value {:media-queries {"all" true, "min-width" "640px"}, :rules (["&" {"color" "rgba(0, 0, 255, 1)"}])}} ["&" {"height" "\"75%\""}]]))
 
   (is (= (garden.core/css {:pretty-print? false} [:.btn (mower/attributes css :.blue :.after)])
-         "@media all and (min-width:640px){.btn{color:rgba(0,0,255,1)}}.btn{height:\"75%\"}")))
+         "@media all and (min-width:640px){.btn{color:rgba(0,0,255,1)}}.btn{height:\"75%\"}"))
+
+  (testing "selector with forward slash"
+    (is (= (let [css (slurp (io/resource "test-selectors.css"))]
+             (garden.core/css {:pretty-print? false} [:.thing (mower/attributes css ".xl:w-1/5")]))
+           "@media all and (min-width:1280px){.thing{width:20%}}"))))
 
 (deftest media-query-output-test
   (is (= (->> "@media only screen and (max-width:100px){a{width:100%}}"
