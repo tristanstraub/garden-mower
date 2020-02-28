@@ -1,5 +1,14 @@
 *Garden-mower* is a simple clojure based CSS preprocessor that emulates @apply from PostCSS, as used by [[https://tailwindcss.com/][tailwindcss]]. It merges specific selector attributes from a css document, and outputs data that can be digested by [[https://github.com/noprompt/garden]].
 
+* Dependency
+
+Add *garden-mower* to your dependencies. With tools.deps:
+
+#+BEGIN_SRC clojure
+  {:deps {com.tristanstraub/garden-mower {:git/url "https://github.com/tristanstraub/garden-mower"
+                                          :sha "c8af31358ae1da496c18d3c9d2a35d049611d5f8"}}}
+#+END_SRC
+
 * Examples
 
 - *tailwindcss* [[examples/tailwind]]
@@ -62,15 +71,6 @@ to produce roughly the following CSS:
     margin-right: 0.25rem;
   }
 }
-#+END_SRC
-
-* Dependency
-
-Add *garden-mower* to your dependencies. With tools.deps:
-
-#+BEGIN_SRC clojure
-  {:deps {com.tristanstraub/garden-mower {:git/url "https://github.com/tristanstraub/garden-mower"
-                                          :sha "c8af31358ae1da496c18d3c9d2a35d049611d5f8"}}}
 #+END_SRC
 
 * Usage
